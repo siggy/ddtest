@@ -89,8 +89,6 @@ func handleDatadogCallback(w http.ResponseWriter, req *http.Request, _ httproute
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/text")
 
-	// ctx := req.Context()
-
 	code := req.URL.Query().Get("code")
 	if code == "" {
 		log.Fatal("missing datadog code param")
